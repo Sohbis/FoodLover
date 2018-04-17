@@ -19,7 +19,6 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { baseURL } from './shared/baseurl';
 
 
 import { DishService } from './services/dish.service';
@@ -55,7 +54,7 @@ import { enterView } from '@angular/core/src/render3/instructions';
   entryComponents: [
     LoginComponent
   ],
-  providers: [DishService, PromotionService, LeaderService, ProcessHttpmsgService, { provide: 'BaseURL', useValue: baseURL } ],
+  providers: [DishService, PromotionService, LeaderService, ProcessHttpmsgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

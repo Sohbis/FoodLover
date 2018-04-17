@@ -8,14 +8,14 @@
         <h3>{{dish.name | uppercase}}</h3>
       </md-card-title>
     </md-card-header>
-    <img md-card-image src="{{BaseURL+dish.image}}" alt={{dish.name}}>
+    <img md-card-image src="{{dish.image}}" alt={{dish.name}}>
     <md-card-content>
       <p>{{dish.description}}
       </p>
     </md-card-content>
   </div>
   
-  <div [hidden]="dishes || dishErrMess">
+  <div [hidden]="dish || dishErrMess">
     <md-spinner></md-spinner>
     <h4>Loading . . . Please Wait</h4>
   </div>

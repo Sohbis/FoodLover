@@ -16,7 +16,7 @@ import 'rxjs/add/operator/switchMap';
   preserveWhitespaces: false
 })
 export class DishdetailComponent implements OnInit {
-  // @Input()
+  @Input()
   dish: Dish;
   dishIds: number[];
   prev: number;
@@ -42,7 +42,7 @@ export class DishdetailComponent implements OnInit {
   constructor(private dishservice: DishService,
     private route: ActivatedRoute,
     private location: Location,
-    private fb: FormBuilder, @Inject('BaseURL') private BaseURL ) {
+    private fb: FormBuilder) {
     this.createForm();
   }
 
