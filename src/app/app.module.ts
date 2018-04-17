@@ -24,7 +24,6 @@ import { ContactComponent } from './contact/contact.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService} from './services/leader.service';
-import { LoginComponent } from './login/login.component';
 import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 
 import { enterView } from '@angular/core/src/render3/instructions';
@@ -38,8 +37,7 @@ import { enterView } from '@angular/core/src/render3/instructions';
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent,
-    LoginComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +50,7 @@ import { enterView } from '@angular/core/src/render3/instructions';
     ReactiveFormsModule
   ],
   entryComponents: [
-    LoginComponent
+
   ],
   providers: [DishService, PromotionService, LeaderService, ProcessHttpmsgService],
   bootstrap: [AppComponent]
