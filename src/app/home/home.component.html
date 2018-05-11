@@ -1,6 +1,6 @@
-<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
-  fxLayoutGap="10px">
-<md-card fxFlex>
+<div class="container-fluid" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
+  fxLayoutGap="10px" style="margin: 20px;">
+<md-card fxFlex  style="height: 621px;">
   <div *ngIf="dish">
     <md-card-header>
       <div md-card-avatar></div>
@@ -27,7 +27,7 @@
 
         
 
-  <md-card  fxFlex>
+  <md-card  fxFlex style="height: 621px;">
     <div *ngIf="promotion">
     <md-card-header>
       <div md-card-avatar></div>
@@ -48,7 +48,7 @@
       </div>
   </md-card>
 
-    <md-card  fxFlex>
+    <md-card  fxFlex style="height: 621px;">
       <div *ngIf="leader">
       <md-card-header>
         <div md-card-avatar></div>
