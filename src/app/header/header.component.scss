@@ -9,13 +9,23 @@ $background-pale: #D1C4E9;
 }
 
 .jumbotron {
-    @include zero-margin(70px,30px);
+    // @include zero-margin(70px,30px);
     background: $background-light ;
     color:floralwhite;
     min-height: 150px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    padding-top: 140px;
+    opacity: 1;
+    margin: 0px;
 }
 $background-moredark: #4527A0;
 
+.nav li a
+{
+color: white;
+}
 .active {
     background: $background-moredark;
 }

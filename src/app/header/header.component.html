@@ -15,8 +15,9 @@
     <span class="fa fa-address-card fa-lg"></span> Contact</a>
 
 </md-toolbar> -->
-   
-<ul class="nav nav-tabs">
+<div class="container-fluid">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #18565d94">
+<ul class="nav navbar-nav ">
       <li routerLinkActive="active">
         <a  routerLink="/home" routerLinkActive="active">
           <span class="fa fa-home fa-lg"></span> Home</a>
@@ -25,13 +26,22 @@
           <a routerLink="/menu" routerLinkActive="active">
             <span class="fa fa-list fa-lg"></span> Menu</a>
       </li>
+            <li routerLinkActive="active">
+              <a routerLink="/about" routerLinkActive="active">
+                <span class="fa fa-info fa-lg"></span> About</a>
+            </li>
+                  <li routerLinkActive="active">
+                    <a routerLink="/contactus" routerLinkActive="active">
+                      <span class="fa fa-address-card  fa-lg"></span> Contact</a>
+                  </li>
     </ul>
+  </nav>
+  </div>
 
-<div class="container-fluid jumbotron" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.xs="start center"
-  fxLayoutAlign.sm="start center" fxLayoutAlign.gt-sm="center center" fxLayoutGap="10px">
+<div class="container-fluid jumbotron" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.xs="start center" fxLayoutAlign.sm="start center" fxLayoutAlign.gt-sm="center center" fxLayoutGap="10px" style="background-image: url(./assets/images/bg.jpg)">
 
-  <div fxFlex fxFlex.gt-sm="50%">
-    <h1>Ristorante Con Fusion</h1>
+  <div fxFlex fxFlex.gt-sm="50%" style="background-color:#01535acc; padding: 24px;">
+    <h1>Angular demo project</h1>
     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations
       will tickle your culinary senses!</p>
   </div>
