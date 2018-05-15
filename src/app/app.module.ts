@@ -27,6 +27,7 @@ import { LeaderService} from './services/leader.service';
 import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 
 import { enterView } from '@angular/core/src/render3/instructions';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { enterView } from '@angular/core/src/render3/instructions';
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
