@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation, Inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 
 
 import { Dish } from '../shared/dish';
@@ -82,20 +82,23 @@ export class DishdetailComponent implements OnInit {
     'rating': '',
     'comment': '',
   };
-  onSubmit() {
+  onSubmit(formDirective: FormGroupDirective) {
     const d = new Date();
     this.date = d.toISOString();
     this.feedbackForm.value.date = this.date;
     this.dish.comments.push(this.feedbackForm.value);
     console.log(this.feedbackForm.value);
-    this.feedbackForm.reset({
-      author: '',
-      rating: '',
-      comment: ''
 
-    });
+    // this.feedbackForm.reset({
+    //   author: null,
+    //   rating: '',
+    //   comment: null
+
+    // });
+    formDirective.resetForm();
     this.isError = true;
-    this.value = 5;
+    // this.value = 5;
+
   }
 
   // tslint:disable-next-line:member-ordering
@@ -124,7 +127,7 @@ export class DishdetailComponent implements OnInit {
       // clear previous error message (if any)
       this.formErrors[field] = '';
       const control = form.get(field);
-      if (control && control.dirty && !control.valid) {
+      if (control.dirty) {
         const messages = this.validationMessages[field];
         this.isError = true;
         // tslint:disable-next-line:forin

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 
 import { Feedback, ContactType } from '../shared/feedback';
 
@@ -68,18 +68,20 @@ export class ContactComponent implements OnInit {
 
 
 
-  onSubmit() {
+  onSubmit(formDirective: FormGroupDirective) {
     this.feedback = this.feedbackForm.value;
     console.log(this.feedback);
-    this.feedbackForm.reset({
-      firstname: '',
-      lastname: '',
-      telnum: '',
-      email: '',
-      agree: false,
-      contacttype: 'None',
-      message: ''
-    });
+    // this.feedbackForm.reset({
+    //   firstname: '',
+    //   lastname: '',
+    //   telnum: '',
+    //   email: '',
+    //   agree: false,
+    //   contacttype: 'None',
+    //   message: ''
+    // });
+    formDirective.resetForm();
+
   }
 
   onValueChanged(data?: any) {

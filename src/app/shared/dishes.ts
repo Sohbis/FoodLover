@@ -45,12 +45,12 @@ export const DISHES: Dish[] = [
     },
     {
         id: 2,
-        name: 'Zucchipakoda',
-        image: '/assets/images/zucchipakoda.png',
+        name: 'Chicken Nuggets',
+        image: '/assets/images/zucchipakoda.jpg',
         category: 'appetizer',
         label: '',
         price: '1.99',
-        description: 'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce',
+        description: 'Deep fried chicken coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce',
         featured: false,
         comments: [
             {
@@ -87,12 +87,12 @@ export const DISHES: Dish[] = [
     },
     {
         id: 3,
-        name: 'Vadonut',
-        image: '/assets/images/vadonut.png',
+        name: 'Donut',
+        image: '/assets/images/vadonut.jpg',
         category: 'appetizer',
         label: 'New',
         price: '1.99',
-        description: 'A quintessential ConFusion experience, is it a vada or is it a donut?',
+        description: 'A quintessential Foodlover experience',
         featured: false,
         comments: [
             {
@@ -122,15 +122,15 @@ export const DISHES: Dish[] = [
             {
                 rating: 2,
                 comment: 'Its is your birthday, we are gonna party!',
-                author: '25 Cent',
+                author: '20 Cent',
                 date: '2011-12-02T17:57:28.556094Z'
             }
         ]
     },
     {
         id: 4,
-        name: 'ElaiCheese Cake',
-        image: '/assets/images/elaicheesecake.png',
+        name: 'Cheese Cake',
+        image: '/assets/images/elaicheesecake.jpg',
         category: 'dessert',
         label: '',
         price: '2.99',
@@ -164,7 +164,7 @@ export const DISHES: Dish[] = [
             {
                 rating: 2,
                 comment: 'Its your birthday, we are gonna party!',
-                author: '25 Cent',
+                author: '22 Cent',
                 date: '2011-12-02T17:57:28.556094Z'
             }
         ]

@@ -1,15 +1,15 @@
-<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
-  fxLayoutGap="50px" fxLayoutGap.xs="0">
+<div class="container-fluid" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
+  fxLayoutGap="50px" fxLayoutGap.xs="0" style="background-image: url(../assets/images/bg1.jpg);background-size: cover">
 
 
-  <div fxFlex="40" *ngIf="dish">
-    <md-card>
+  <div fxFlex="40" *ngIf="dish" >
+    <md-card  style="margin-top: -336px">
       <md-card-header>
         <md-card-title>
           <h3>{{dish.name | uppercase}}</h3>
         </md-card-title>
       </md-card-header>
-      <img md-card-image src="{{dish.image}}" alt={{dish.name}}>
+      <img md-card-image src="{{dish.image}}" alt={{dish.name}} >
       <md-card-content>
         <p>{{dish.description}}
         </p>
@@ -30,21 +30,25 @@
   </div>
 
 
-  <div fxFlex="40" *ngIf="dish">
+  <div fxFlex="40" *ngIf="dish" >
 
-    <md-list fxFlex>
+    <div style="background-color:#e8e8e8cc; padding: 20px; margin-top: 100px;margin-bottom: 10px">
 
-      <h3>Comments</h3>
+      <h2>Comments</h2>
+      <br>
 
-      <md-list-item *ngFor="let com of dish.comments">
+      <div *ngFor="let com of dish.comments">
 
-        <p md-line>{{com.comment}}</p>
+        <h4>{{com.comment}}</h4>
 
-        <p md-line> {{com.rating}} Stars </p>
+        <p> {{com.rating}} Stars </p>
 
-        <p md-line>--{{com.author}},{{com.date |date}} </p>
+        <p>--{{com.author}},{{com.date |date}} </p>
 
-      </md-list-item>
+        <br>
+
+      </div>
+
 
 
 
@@ -64,7 +68,8 @@
 
 
 
-      <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+
+      <form novalidate [formGroup]="feedbackForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
         <p>
           <md-input-container class="half-width" dividerColor="{{(formErrors.author) ? 'warn' : 'primary'}}">
             <input mdInput [(ngModel)]="author" formControlName="author" placeholder="Name" type="text" required>
@@ -91,9 +96,9 @@
           </md-input-container>
 
         </p>
-        <button type="submit" md-button class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
+        <button type="submit" [disabled]="feedbackForm.invalid" md-button style="background-color: rgb(188, 165, 252); ">Submit</button>
       </form>
-    </md-list>
+   </div>
 
   </div>
 

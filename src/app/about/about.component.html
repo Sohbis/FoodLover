@@ -11,10 +11,10 @@
     <div fxLayout="column" fxLayout.gt-sm="row">
       <div fxFlex="70">
         <h2>Our History</h2>
-        <p>Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence in Hong Kong.
-          With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage from the A-list
-          clientele in Hong Kong. Featuring four of the best three-star Michelin chefs in the world, you never know what
-          will arrive on your plate the next time you visit us.</p>
+        <p>--Placeholder--Started in 2010, Ristorante con Fusion quickly established itself as a culinary icon par excellence
+          in Hong Kong. With its unique brand of world fusion cuisine that can be found nowhere else, it enjoys patronage
+          from the A-list clientele in Hong Kong. Featuring four of the best three-star Michelin chefs in the world, you
+          never know what will arrive on your plate the next time you visit us.--Placeholder--</p>
         <p>The restaurant traces its humble beginnings to
           <em>The Frying Pan</em>, a successful chain started by our CEO, Mr. Peter Pan, that featured for the first time the
           world's best cuisines in a pan.</p>
@@ -54,24 +54,66 @@
     </md-card>
   </div>
 
+  <div>
+    <h2>Corporate Leadership</h2>
+    <br>
+    <div *ngFor="let leader of leader">
 
-  <div fxFlex>
-    <div style="height:100px">
-      <h2>Corporate Leadership</h2>
+      <img height="80px" style="border-radius:50%" src={{leader.image}}>
+      <p>
+        <b>{{leader.name}}</b>
+      </p>
+      <p>{{leader.designation}}</p>
+      <p>{{leader.description}}</p>
     </div>
-    <div>
-      <md-list fxFlex>
-        <md-list-item *ngFor="let leader of leader">
-          <div fxFlex=3>
-            <img height="80px" style="border-radius:50%" src={{leader.image}}>
-          </div>
-          <div fxFlex=50>
-            <p md-line>{{leader.name}}</p>
-            <p md-line>{{leader.designation}}</p>
-            <p md-line>{{leader.description}}</p>
-          </div>
-        </md-list-item>
-      </md-list>
+    <div [hidden]="leader || errMess">
+      <md-spinner></md-spinner>
+      <h4>Loading . . . Please Wait</h4>
     </div>
   </div>
-</div>
+  <!-- <div fxFlex >
+    <div >
+      <h2>Corporate Leadership</h2>
+      <br>
+ </div>
+    <div >
+      
+      <md-list>
+        <md-card>
+        <md-list-item *ngFor="let leader of leader">
+                  
+                    <md-card-content>
+                  <p>{{leader.name}}</p>
+                  <p>{{leader.designation}}</p>
+                  <p>{{leader.description}}</p>
+                    </md-card-content> -->
+                  
+          <!-- <div fxFlex=10>
+            <img height="80px" style="border-radius:50%" src={{leader.image}}>
+          </div>
+          <div fxFlex=40>
+            <p>{{leader.name}}</p>
+            <p>{{leader.designation}}</p>
+            <p >{{leader.description}}</p>
+          </div> -->
+       <!-- </md-list-item>
+<div [hidden]="leader || errMess">
+  <md-spinner></md-spinner>
+  <h4>Loading . . . Please Wait</h4>
+</div></md-card>
+      </md-list>
+      
+    </div>
+  </div> -->
+    <!-- <div fxFlex >
+      <md-grid-list cols="1" *ngFor="let leader of leader">
+        <md-grid-tile >
+          <p md-line>{{leader.name}}</p>
+          <p md-line>{{leader.designation}}</p>
+          <p>{{leader.description}}</p>
+    
+
+        </md-grid-tile>
+      </md-grid-list>
+    
+</div></div> -->
