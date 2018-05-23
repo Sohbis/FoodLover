@@ -12,25 +12,25 @@
     <div fxLayout="column" fxLayout.gt-sm="row">
       <div fxFlex="50" fxFlexOffset="20px">
         <h4>Our Address</h4>
-        <address style="size: 80%">
-          4xx, R.K Puram
-          <br> New Delhi
-          <br> INDIA
-          <br>
-          <i class="fa fa-phone"></i>: +870-04xx-52x
-          <br>
-          <i class="fa fa-fax"></i>: +870-04xx-52x
-          <br>
-          <i class="fa fa-envelope"></i>:
-          <a href="mailto:soham.biswas.19@gmail.com">soham.biswas</a>
-        </address>
+            <address style="size: 80%">
+              4xx, R.K Puram
+              <br> New Delhi
+              <br> INDIA
+              <br>
+              <i class="fa fa-phone"></i>: +870-04xx-52x
+              <br>
+              <i class="fa fa-fax"></i>: +870-04xx-52x
+              <br>
+              <i class="fa fa-envelope"></i>:
+              <a href="mailto:soham.biswas.19@gmail.com">soham.biswas</a>
+            </address>
         <p></p>
         <div>
-          <a md-raised-button href="tel:+870-04xx-52x">
+          <a md-raised-button href="tel:+85212345678">
             <i class="fa fa-phone"></i> Call</a>
           <a md-raised-button>
             <i class="fa fa-skype"></i> Skype</a>
-          <a md-raised-button href="mailto:soham.biswas.19@gmail.com">
+          <a md-raised-button href="mailto:confusion@food.net">
             <i class="fa fa-envelope-o"></i> Email</a>
         </div>
       </div>
@@ -43,7 +43,7 @@
     <h3>Send us your Feedback</h3>
     <!-- <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p> -->
 
-    <form novalidate [formGroup]="feedbackForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
+    <form novalidate [formGroup]="feedbackForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)" *ngIf=" !isSubmit">
       <p>
         <md-input-container class="half-width" dividerColor="{{(formErrors.firstname) ? 'warn' : 'primary'}}">
           <input mdInput formControlName="firstname" placeholder="First Name" type="text" required>
@@ -93,7 +93,34 @@
           <textarea mdInput formControlName="message" placeholder="Your Feedback" rows=12></textarea>
         </md-input-container>
       </p>
-      <button type="submit" md-button class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
+      <button type="submit" md-button style="background-color: rgb(188, 165, 252);" [disabled]="feedbackForm.invalid">Submit</button>
     </form>
+  </div>
+
+
+  <div fxFlex *ngIf="isSubmit">
+
+
+    <md-list *ngIf="feedback">
+      <h3>Your submission</h3>
+      <div class="spacing">
+        <md-list-item>
+
+          <p md-line>First name : {{feedback.firstname}}</p>
+          <p md-line>Last name :{{feedback.lastname}}</p>
+          <p md-line>Telephone :{{feedback.tel}}</p>
+          <p md-line>Email :{{feedback.email}}</p>
+          <p md-line>Contact :{{feedback.agree}}</p>
+          <p md-line>Contact type :{{feedback.contacttype}}</p>
+          <p md-line>Feedback :{{feedback.message}}</p>
+        </md-list-item>
+      </div>
+    </md-list>
+    <div [hidden]="feedback">
+      <h3>Submitting form</h3>
+
+      <md-spinner></md-spinner>
+      <h4>Loading . . . Please Wait</h4>
+    </div>
   </div>
 </div>

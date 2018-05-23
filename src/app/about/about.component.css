@@ -1,3 +1,10 @@
 md-list-item, md-list-item .md-list-item-inner {
    height: 150px;
 }
+h1,h3,h2{
+    font-family: 'Permanent Marker', cursive;
+}
+p{
+     font-family: 'Caveat', cursive;
+    font-size: 20px;
+}

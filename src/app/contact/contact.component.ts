@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
-
+import { flyInOut, expand } from '../animations/app.animation';
 import { Feedback, ContactType } from '../shared/feedback';
+import { FeedBackService } from '../services/feed-back.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,14 +12,16 @@ import { Feedback, ContactType } from '../shared/feedback';
 export class ContactComponent implements OnInit {
 
   feedbackForm: FormGroup;
-  feedback: Feedback;
+  feedback: Feedback[];
   contactType = ContactType;
-
-  constructor(private fb: FormBuilder) {
+  isSubmit: boolean;
+isload = false;
+  constructor(private fb: FormBuilder, private fbservice: FeedBackService) {
     this.createForm();
   }
 
   ngOnInit() {
+    this.isSubmit = false;
   }
 
   // tslint:disable-next-line:member-ordering
@@ -69,19 +72,14 @@ export class ContactComponent implements OnInit {
 
 
   onSubmit(formDirective: FormGroupDirective) {
-    this.feedback = this.feedbackForm.value;
-    console.log(this.feedback);
-    // this.feedbackForm.reset({
-    //   firstname: '',
-    //   lastname: '',
-    //   telnum: '',
-    //   email: '',
-    //   agree: false,
-    //   contacttype: 'None',
-    //   message: ''
-    // });
-    formDirective.resetForm();
+    // this.feedback = this.feedbackForm.value;
+    // console.log(this.feedback);
+    this.isSubmit = true;
 
+    this.fbservice.getFeedBack(this.feedbackForm.value).subscribe(fb => this.feedback = fb);
+    setTimeout(() => { this.isSubmit = false; formDirective.resetForm(); }, 5000);
+
+    console.log('called0' + this.isSubmit);
   }
 
   onValueChanged(data?: any) {

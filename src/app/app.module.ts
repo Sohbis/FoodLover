@@ -28,6 +28,7 @@ import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 
 import { enterView } from '@angular/core/src/render3/instructions';
 import { SearchPipe } from './search.pipe';
+import { FeedBackService } from './services/feed-back.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { SearchPipe } from './search.pipe';
   entryComponents: [
 
   ],
-  providers: [DishService, PromotionService, LeaderService, ProcessHttpmsgService],
+  providers: [DishService, PromotionService, LeaderService, ProcessHttpmsgService, FeedBackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
