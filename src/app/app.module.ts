@@ -29,6 +29,7 @@ import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 import { enterView } from '@angular/core/src/render3/instructions';
 import { SearchPipe } from './search.pipe';
 import { FeedBackService } from './services/feed-back.service';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FeedBackService } from './services/feed-back.service';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    SearchPipe
+    SearchPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

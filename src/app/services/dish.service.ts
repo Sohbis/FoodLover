@@ -22,7 +22,10 @@ export class DishService {
   }
 
   getDish(id: number): Observable<Dish> {
+
+    console.log('get dish called');
     return Observable.of(DISHES.filter((dish) => (dish.id === id))[0]).delay(2000);
+
   }
 
   getFeaturedDish(): Observable<Dish> {

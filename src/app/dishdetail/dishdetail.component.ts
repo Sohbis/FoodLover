@@ -52,6 +52,7 @@ export class DishdetailComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
       .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); }, errmess => this.errMess = <any>errmess);
+    console.log('called 0');
   }
   get tickInterval(): number | 'auto' {
     return this.showTicks ? (this.autoTicks ? 'auto' : this._tickInterval) : 0;
@@ -64,6 +65,7 @@ export class DishdetailComponent implements OnInit {
     const index = this.dishIds.indexOf(dishId);
     this.prev = this.dishIds[(this.dishIds.length + index - 1) % this.dishIds.length];
     this.next = this.dishIds[(this.dishIds.length + index + 1) % this.dishIds.length];
+    console.log('called 1');
   }
   createForm() {
     this.feedbackForm = this.fb.group({
@@ -89,12 +91,7 @@ export class DishdetailComponent implements OnInit {
     this.dish.comments.push(this.feedbackForm.value);
     console.log(this.feedbackForm.value);
 
-    // this.feedbackForm.reset({
-    //   author: null,
-    //   rating: '',
-    //   comment: null
 
-    // });
     formDirective.resetForm();
     this.isError = true;
     // this.value = 5;

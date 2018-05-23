@@ -31,8 +31,6 @@ $divider-color:        #BDBDBD;
     padding: $pad-up-down $pad-left-right;
 }
 
-
-
 .background-primary {
     background-color: $background-dark!important;
   }
@@ -41,6 +39,13 @@ $divider-color:        #BDBDBD;
   }
 .text-floral-white {
     color: floralwhite!important;
+}
+
+.highlight {
+    background-color:#757575;
+    border: 1px solid $primary-color-dark;
+    z-index: 1;
+    transform: scale(1.05);
 }
 
 .flex-spacer {
