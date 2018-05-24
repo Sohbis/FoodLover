@@ -20,6 +20,7 @@ import { flyInOut, expand } from '../animations/app.animation';
 export class AboutComponent implements OnInit {
 
   leader: Leader[];
+  errMess: string;
   constructor(private leaderService: LeaderService ) { }
 
   ngOnInit() {

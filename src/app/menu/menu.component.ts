@@ -24,6 +24,7 @@ export class MenuComponent implements OnInit {
   dishes: Dish[];
   errMess: string;
   err: string = null;
+  items: any;
   constructor(private dishService: DishService) { }
 
   ngOnInit() {
