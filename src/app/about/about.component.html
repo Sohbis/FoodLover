@@ -57,7 +57,7 @@
   <div>
     <h2>Corporate Leadership</h2>
     <br>
-    <div *ngFor="let leader of leader">
+    <div *ngFor="let leader of leader" [@expand]>
 
       <img height="80px" style="border-radius:50%" src={{leader.image}}>
       <p>

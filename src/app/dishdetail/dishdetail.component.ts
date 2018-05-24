@@ -7,13 +7,22 @@ import { DishService } from '../services/dish.service';
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
+import { visibility, expand, flyInOut } from '../animations/app.animation';
 
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
   styleUrls: ['./dishdetail.component.css'],
-  encapsulation: ViewEncapsulation.None,
-  preserveWhitespaces: false
+  // encapsulation: ViewEncapsulation.None,
+  // preserveWhitespaces: false,
+  // tslint:disable-next-line:use-host-property-decorator
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+  },
+  animations: [
+    flyInOut(), expand(), visibility()
+  ],
 })
 export class DishdetailComponent implements OnInit {
   @Input()
@@ -37,7 +46,7 @@ export class DishdetailComponent implements OnInit {
   private _tickInterval = 1;
   date: string;
   errMess: string;
-
+  visibility = 'shown';
 
   constructor(private dishservice: DishService,
     private route: ActivatedRoute,
@@ -50,8 +59,8 @@ export class DishdetailComponent implements OnInit {
 
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params
-      .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-      .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); }, errmess => this.errMess = <any>errmess);
+      .switchMap((params: Params) => { this.visibility = 'hidden'; return this.dishservice.getDish(+params['id']); })
+      .subscribe(dish => { this.visibility = 'shown'; this.dish = dish; this.setPrevNext(dish.id); }, errmess => this.errMess = <any>errmess);
     console.log('called 0');
   }
   get tickInterval(): number | 'auto' {

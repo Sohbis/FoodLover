@@ -2,7 +2,7 @@
   fxLayoutGap="20px" fxLayoutGap.xs="10" style="background-image: url(../assets/images/bg1.jpg);background-size: cover">
 
 
-  <div fxFlex="40" *ngIf="dish" style="height: 1120px;">
+  <div fxFlex="40" *ngIf="dish" style="height: 1350px;" [@visibility]="visibility" [@expand]>
     <md-card >
       <md-card-header>
         <md-card-title>
@@ -18,11 +18,13 @@
         <button md-button [routerLink]="['/dishdetail', prev]">
           <span class="fa fa-chevron-left fa-lg"></span>
         </button>
-        <button md-button (click)="goBack()">BACK</button>
-        <button md-button>LIKE</button>
-        <button md-button>SHARE</button>
+        <!-- <button md-button (click)="goBack()">BACK</button> -->
+                <button md-button routerLink="/menu">BACK</button>
+
+        <!-- <button md-button>LIKE</button>
+        <button md-button>SHARE</button> -->
         <span class="flex-spacer"></span>
-        <button md-button [routerLink]="['/dishdetail', next]">
+        <button md-button [routerLink]="['/dishdetail', next]" >
           <span class="fa fa-chevron-right fa-lg"></span>
         </button>
       </md-card-actions>
@@ -30,7 +32,7 @@
   </div>
 
 
-  <div fxFlex="40" *ngIf="dish" >
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility" [@expand]>
 
   <div style="background-color:#e8e8e8cc; padding: 20px; margin-top: 80px;margin-bottom: 10px">
 

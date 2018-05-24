@@ -7,7 +7,15 @@ import { FeedBackService } from '../services/feed-back.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
+  // tslint:disable-next-line:use-host-property-decorator
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+  },
+  animations: [
+    flyInOut(), expand()
+  ],
 })
 export class ContactComponent implements OnInit {
 

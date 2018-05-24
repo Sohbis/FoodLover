@@ -11,6 +11,7 @@ export function visibility() {
             opacity: 0
         })),
         transition('* => *', animate('0.5s ease-in-out'))
+
     ]);
 }
 export function flyInOut() {
@@ -27,7 +28,7 @@ export function flyInOut() {
 }
 export function expand() {
     return trigger('expand', [
-        state('*', style({ opacity: 1, transform: 'translateX(0)' })),
+        state('shown', style({ opacity: 1, transform: 'translateX(0)' })),
         transition(':enter', [
             style({ transform: 'translateY(-50%)', opacity: 0 }),
             animate('200ms ease-in', style({ opacity: 1, transform: 'translateX(0)' }))
