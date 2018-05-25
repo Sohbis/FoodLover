@@ -30,6 +30,7 @@ import { enterView } from '@angular/core/src/render3/instructions';
 import { SearchPipe } from './search.pipe';
 import { FeedBackService } from './services/feed-back.service';
 import { HighlightDirective } from './directives/highlight.directive';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,10 @@ import { HighlightDirective } from './directives/highlight.directive';
     FlexLayoutModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDJ4XP-MD4jOncSZXyJC8_Jyk7jKHRgIAU'
+    })
   ],
   entryComponents: [
 

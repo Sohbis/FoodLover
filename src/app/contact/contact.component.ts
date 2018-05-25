@@ -23,7 +23,9 @@ export class ContactComponent implements OnInit {
   feedback: Feedback[];
   contactType = ContactType;
   isSubmit: boolean;
-isload = false;
+  isload = false;
+  lat = 28.562804852830876;
+  lng = 77.17668262222719;
   constructor(private fb: FormBuilder, private fbservice: FeedBackService) {
     this.createForm();
   }
@@ -31,7 +33,9 @@ isload = false;
   ngOnInit() {
     this.isSubmit = false;
   }
-
+  onClicked(event) {
+  console.log(event);
+}
   // tslint:disable-next-line:member-ordering
   formErrors = {
     'firstname': '',

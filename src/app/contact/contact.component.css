@@ -9,15 +9,12 @@
 .form-size {
     width: 75%
 }
-h3,h4{
-    font-family: 'Permanent Marker', cursive;
-}
-p{
-     font-family: 'Caveat', cursive;
-    font-size: 20px;
-}
 
 md-line{
     font-family: 'Caveat', cursive;
     font-size: 20px;
+}
+
+agm-map {
+  height: 300px;
 }
